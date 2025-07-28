@@ -1,0 +1,121 @@
+/* styles/globals.css */
+
+/* Import Tailwind base, components, and utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom fonts - You can link these in your _app or document head */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Root styles */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0fdf4; /* very light green bg */
+  color: #064e3b; /* dark green text */
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #022c22; /* very dark green bg */
+    color: #d9f99d; /* light green text */
+  }
+}
+
+/* Smooth scrollbar for modern browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #10b981; /* emerald green */
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Links */
+a {
+  @apply text-green-600 hover:text-green-400 transition-colors duration-300;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Buttons */
+button {
+  @apply bg-green-600 text-white px-5 py-2 rounded-md shadow-md
+    hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-400 transition;
+  font-weight: 600;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Typing animation styles - used with your TypingTitle component */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: #10b981;
+  margin-left: 3px;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Utility overrides for premium spacing */
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Toast/alert notifications styling placeholder */
+.toast {
+  @apply fixed top-5 right-5 bg-green-600 text-white px-4 py-2 rounded shadow-lg opacity-90;
+  z-index: 9999;
+  animation: slide-in 0.5s ease forwards;
+}
+
+@keyframes slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 0.9; }
+}
+
+/* Utility classes for skill badges or progress bars */
+.skill-badge {
+  @apply inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold;
+}
+
+.progress-bar {
+  @apply h-2 bg-green-500 rounded-full transition-all duration-500 ease-in-out;
+}
+
+/* Footer styling */
+footer {
+  @apply bg-green-900 text-green-100 py-8 text-center text-sm;
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: 769px) {
+  html {
+    font-size: 16px;
+  }
+}
